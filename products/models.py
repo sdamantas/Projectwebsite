@@ -1,6 +1,6 @@
-from django.db.models import Model, CharField, DecimalField, TextField, DateTimeField, ManyToManyField
-from accounts.models import Customer
+from django.db.models import Model, CharField, DecimalField, TextField, DateTimeField, ManyToManyField, SET_NULL, ForeignKey
 # # Create your models here.
+from accounts.models import Customer
 #
 
 
@@ -31,8 +31,8 @@ class Order(Model):
         ('Pristatyta', 'Pristatyta'),
     )
 
-    customer = ManyToManyField(Customer, null=True, on_delete= SET_NULL)
-    cart = ManyToManyField(Product, null=True, on_delete= SET_NULL)
+    customer = ForeignKey(Customer, null=True, on_delete= SET_NULL)
+    cart = ForeignKey(Product, null=True, on_delete= SET_NULL)
     created = DateTimeField(auto_now_add=True)
     status = CharField(max_length=200, null=True, choices=STATUS)
 
