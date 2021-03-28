@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for item in object_list %}
+    {{ item.title }}
+    {{ item.description }}
+    {{ item.date }}
+    {{ item.user }} <br>
+{% endfor %}
+
+</body>
+</html>
