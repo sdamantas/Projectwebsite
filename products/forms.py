@@ -1,8 +1,8 @@
-# from django.forms import ModelForm
-# from products.models import Product
-#
-# class ProductForm(ModelForm):
-#     class Meta():
-#         model = Product
-#
-#         fields = "__all__"
+from django.forms import ModelForm
+from products.models import Order
+
+class OrderForm(ModelForm):
+    class Meta:
+        model = Order
+
+        fields = "__all__"

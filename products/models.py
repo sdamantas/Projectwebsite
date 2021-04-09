@@ -36,3 +36,5 @@ class Order(Model):
     created = DateTimeField(auto_now_add=True)
     status = CharField(max_length=200, null=True, choices=STATUS)
 
+    def __str__(self):
+        return self.Product.title
